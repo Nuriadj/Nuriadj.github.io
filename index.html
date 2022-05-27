@@ -301,32 +301,52 @@
 <!--Results-->
 <div id="Results" class="container">
     <h2 class="display-6 text-dark content-space-t-3">Results</h2>
-    <p class="fs-3">Bellow are some charts that show the most relevant results of the tests. The first one shows the results for the Room Occupancy dataSet.</p>
+    <p class="fs-3">Bellow are some charts that show the most relevant results of the tests.</p>
 
-    <!--Result Room Occupancy-->
-    <div>
-      <div class="row">
-        <div class="col-md-6"><canvas id="IdleOccupancy" width="100" height="50" style="display: block; box-sizing: border-box; height: 50px; width: 100px;"></canvas></div>
-        <div class="col-md-6"><canvas id="LowOccupancy" width="100" height="50" style="display: block; box-sizing: border-box; height: 50px; width: 100px;"></canvas></div>
+    <div id="chartResults" class="carousel slide content-space-t-1" data-bs-ride="carousel" data-bs-keyboard="true">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <h4>Room Occupancy dataSet</h4>
+          <p>Cpu times for the Room Occupancy dataSet</p>
+          <!--Result Room Occupancy-->
+          <div>
+            <div class="row">
+              <div class="col-md-6"><canvas id="IdleOccupancy" width="100" height="50" style="display: block; box-sizing: border-box; height: 50px; width: 100px;"></canvas></div>
+              <div class="col-md-6"><canvas id="LowOccupancy" width="100" height="50" style="display: block; box-sizing: border-box; height: 50px; width: 100px;"></canvas></div>
+            </div>
+            <div class="row">
+              <div class="col-md-6"><canvas id="MiddleOccupancy" width="100" height="50" style="display: block; box-sizing: border-box; height: 50px; width: 100px;"></canvas></div>
+              <div class="col-md-6"><canvas id="HighOccupancy" width="100" height="50" style="display: block; box-sizing: border-box; height: 50px; width: 100px;"></canvas></div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <h4>Kdd Cup 1999 dataSet</h4>
+          <!--Results kdd_cup99-->
+          <p class="fs-3">The cpu times obtained for the KDD Cup 1999 dataSet</p>
+          <div>
+            <div class="row">
+              <div class="col-md-6"><canvas id="IdleKdd" width="100" height="50" style="display: block; box-sizing: border-box; height: 50px; width: 100px;"></canvas></div>
+              <div class="col-md-6"><canvas id="LowKdd" width="100" height="50" style="display: block; box-sizing: border-box; height: 50px; width: 100px;"></canvas></div>
+            </div>
+            <div class="row">
+              <div class="col-md-6"><canvas id="MiddleKdd" width="100" height="50" style="display: block; box-sizing: border-box; height: 50px; width: 100px;"></canvas></div>
+              <div class="col-md-6"><canvas id="HighKdd" width="100" height="50" style="display: block; box-sizing: border-box; height: 50px; width: 100px;"></canvas></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="row">
-        <div class="col-md-6"><canvas id="MiddleOccupancy" width="100" height="50" style="display: block; box-sizing: border-box; height: 50px; width: 100px;"></canvas></div>
-        <div class="col-md-6"><canvas id="HighOccupancy" width="100" height="50" style="display: block; box-sizing: border-box; height: 50px; width: 100px;"></canvas></div>
-      </div>
-    </div>
 
+      <!-- Carousel Buttons -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#chartResults" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#chartResults" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
 
-    <!--Results kdd_cup99-->
-    <p class="fs-3">The cpu times obtained for the KDD Cup 1999 dataSet</p>
-    <div>
-      <div class="row">
-        <div class="col-md-6"><canvas id="IdleKdd" width="100" height="50" style="display: block; box-sizing: border-box; height: 50px; width: 100px;"></canvas></div>
-        <div class="col-md-6"><canvas id="LowKdd" width="100" height="50" style="display: block; box-sizing: border-box; height: 50px; width: 100px;"></canvas></div>
-      </div>
-      <div class="row">
-        <div class="col-md-6"><canvas id="MiddleKdd" width="100" height="50" style="display: block; box-sizing: border-box; height: 50px; width: 100px;"></canvas></div>
-        <div class="col-md-6"><canvas id="HighKdd" width="100" height="50" style="display: block; box-sizing: border-box; height: 50px; width: 100px;"></canvas></div>
-      </div>
     </div>
 </div>
 <!--End Results>
