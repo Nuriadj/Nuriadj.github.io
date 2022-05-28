@@ -25828,3 +25828,30 @@ a:hover .text-inherit {
 /*------------------------------------
   File for your custom SCSS style
 ------------------------------------*/
+
+
+.flex-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  float: left;
+  height: 15px;
+  width: 45px;
+  margin-bottom: 0px;
+  border: 0px solid black;
+  padding: 0px;
+  margin: 0;
+  clear: both;
+}
+
+.raspberry {
+  background-color: rgba(227,11,93,1);
+}
+
+.pc {
+  background-color: rgba(0,30,255,0.7);
+}
+

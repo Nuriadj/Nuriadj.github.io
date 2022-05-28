@@ -302,8 +302,14 @@
 <div id="Results" class="container">
     <h2 class="display-6 text-dark content-space-t-3">Results</h2>
     <p class="fs-3">Bellow are some charts that show the most relevant results of the tests.</p>
-
-    <div id="chartResults" class="carousel carousel-dark slide content-space-t-1" data-bs-ride="carousel" data-bs-keyboard="true" data-bs-interval="10000">
+    
+    <!--Common Legend-->
+      <div class="flex-parent content-space-t-1">
+        <a class='box raspberry'></a>&nbsp;Raspberry&nbsp;&nbsp;&nbsp;&nbsp;<a class= "box pc"></a>&nbsp;PC
+    </div>
+    <!--End Common Legend-->
+    
+    <div id="chartResults" class="carousel carousel-dark slide" data-bs-ride="carousel" data-bs-keyboard="true" data-bs-interval="10000">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#chartResults" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#chartResults" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -370,7 +376,6 @@
     </div>
 </div>
 <!--End Results>
-
 <!--Conclusions-->
 <div id="Conclusions" class="container">
     <h2 class="display-6 text-dark content-space-t-3">Conclusions</h2>
@@ -464,7 +469,7 @@ new Chart("IdleOccupancy", {
           }
       },
       legend: {
-        display: true,
+        display: false,
         labels: {
           position: 'left',
           align: 'start'
@@ -472,6 +477,9 @@ new Chart("IdleOccupancy", {
       }, 
     },
     scales: {
+          y: {
+            suggestedMax: 60
+          },
           x: {
             title: {
               display: true,
@@ -525,6 +533,9 @@ new Chart("LowOccupancy", {
       }, 
     },
     scales: {
+          y: {
+            suggestedMax: 60
+          },
           x: {
             title: {
               display: true,
@@ -577,12 +588,15 @@ new Chart("LowOccupancy", {
         }, 
       },
       scales: {
-            x: {
-              title: {
-                display: true,
-              },
-            }
+          y: {
+            suggestedMax: 60
           },
+          x: {
+            title: {
+              display: true,
+            },
+          }
+        },
       },
   });</script>
 <!--End Middle Occupancy-->
@@ -629,12 +643,15 @@ new Chart("LowOccupancy", {
         }, 
       },
       scales: {
-            x: {
-              title: {
-                display: true,
-              },
-            }
+          y: {
+            suggestedMax: 60
           },
+          x: {
+            title: {
+              display: true,
+            },
+          }
+        },
       },
   });</script>
 <!--End High Occupancy-->
@@ -675,7 +692,7 @@ new Chart("LowOccupancy", {
             }
         },
         legend: {
-          display: true,
+          display: false,
           labels: {
             position: 'left',
             align: 'start'
@@ -683,12 +700,15 @@ new Chart("LowOccupancy", {
         }, 
       },
       scales: {
-            x: {
-              title: {
-                display: true,
-              },
-            }
+          y: {
+            suggestedMax: 1200
           },
+          x: {
+            title: {
+              display: true,
+            },
+          }
+        },
       },
   });</script>
   <!--End Idle Kdd-->
@@ -736,12 +756,15 @@ new Chart("LowOccupancy", {
         }, 
       },
       scales: {
-            x: {
-              title: {
-                display: true,
-              },
-            }
+          y: {
+            suggestedMax: 1200
           },
+          x: {
+            title: {
+              display: true,
+            },
+          }
+        },
       },
   });</script>
   <!--End Low Occupancy-->
@@ -788,13 +811,16 @@ new Chart("LowOccupancy", {
           }, 
         },
         scales: {
-              x: {
-                title: {
-                  display: true,
-                },
-              }
+          y: {
+            suggestedMax: 1200
+          },
+          x: {
+            title: {
+              display: true,
             },
+          }
         },
+      },
     });</script>
   <!--End Middle Kdd-->
   
@@ -840,17 +866,20 @@ new Chart("LowOccupancy", {
           }, 
         },
         scales: {
-              x: {
-                title: {
-                  display: true,
-                },
-              }
+          y: {
+            suggestedMax: 1200
+          },
+          x: {
+            title: {
+              display: true,
             },
+          }
         },
+      },
     });</script>
-  <!--End High Occupancy-->
+  <!--End High Kdd-->
 
-  <!--Idle Kdd-->
+  <!--Idle Mi-->
 <script>
   var xValues = ["LR","SVM","GB","RF"];
   
@@ -886,7 +915,7 @@ new Chart("LowOccupancy", {
             }
         },
         legend: {
-          display: true,
+          display: false,
           labels: {
             position: 'left',
             align: 'start'
@@ -894,17 +923,20 @@ new Chart("LowOccupancy", {
         }, 
       },
       scales: {
-            x: {
-              title: {
-                display: true,
-              },
-            }
+          y: {
+            suggestedMax: 45
           },
+          x: {
+            title: {
+              display: true,
+            },
+          }
+        },
       },
   });</script>
-  <!--End Idle Kdd-->
+  <!--End Idle MI-->
   
-  <!--Low Kdd-->
+  <!--Low Mi-->
   <script>
   var xValues = ["LR","SVM","GB","RF"];
   
@@ -947,17 +979,20 @@ new Chart("LowOccupancy", {
         }, 
       },
       scales: {
-            x: {
-              title: {
-                display: true,
-              },
-            }
+          y: {
+            suggestedMax: 45
           },
+          x: {
+            title: {
+              display: true,
+            },
+          }
+        },
       },
   });</script>
-  <!--End Low Occupancy-->
+  <!--End Low Mi-->
   
-  <!--Middle Kdd-->
+  <!--Middle Mi-->
   <script>
     var xValues = ["LR","SVM","GB","RF"];
     
@@ -999,17 +1034,20 @@ new Chart("LowOccupancy", {
           }, 
         },
         scales: {
-              x: {
-                title: {
-                  display: true,
-                },
-              }
+          y: {
+            suggestedMax: 45
+          },
+          x: {
+            title: {
+              display: true,
             },
+          }
+        },
         },
     });</script>
-  <!--End Middle Kdd-->
+  <!--End Middle Mi-->
   
-  <!--High Kdd-->
+  <!--High Mi-->
   <script>
     var xValues = ["LR","SVM","GB","RF"];
     
@@ -1051,15 +1089,18 @@ new Chart("LowOccupancy", {
           }, 
         },
         scales: {
-              x: {
-                title: {
-                  display: true,
-                },
-              }
+          y: {
+            suggestedMax: 45
+          },
+          x: {
+            title: {
+              display: true,
             },
+          }
+        },
         },
     });</script>
-  <!--End High Occupancy-->
+  <!--End High Mi-->
   
 
 
