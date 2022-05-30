@@ -230,8 +230,8 @@
 <div class="row align-items-lg-center content-space-t-1">
   <div class="col-md">
       <div class="text-center">
-          <h4>Laptop</h4>
-          <p>In order to compare the Raspberry results with a higher capacity machine it is going to be used a Laptop. The laptop used is an HP 15s-fq1008ns with 8 cores in total. It has  Ubuntu 20.04 as Operative System. With this will have real knowledge of how well or badly the Raspberry is performing.</p>
+          <h4>HP 15s-fq1008ns Laptop</h4>
+          <p>In order to compare the Raspberry results with a higher capacity machine it is going to be used a Laptop. The laptop used is an HP 15s-fq1008ns with 8 cores in total. It has Ubuntu 20.04 as Operative System. With this will have real knowledge of how well or badly the Raspberry is performing.</p>
   </div>
 </div></div>
   
@@ -374,23 +374,56 @@
       </button>
 
     </div>
+
+    <p class="content-space-t-1">From this data we can find out what percentage the Raspberry is slower than the laptop.</p>
+
+    <!--Common Legend-->
+    <div class="flex-parent content-space-t-1">
+      <a class='box LR'></a>&nbsp;LR&nbsp;&nbsp;&nbsp;&nbsp;<a class= "box SVM"></a>&nbsp;SVM&nbsp;&nbsp;&nbsp;&nbsp;<a class= "box GB"></a>&nbsp;GB&nbsp;&nbsp;&nbsp;&nbsp;<a class= "box RF"></a>&nbsp;RF
+    </div>
+  <!--End Common Legend-->
+
+    <!--Porcentaje Lentitud-->
+
+    <div class="content-space-t-1">
+      <div class="row">
+        <div class="col-md-6"><canvas id="PerOccupancy" width="100" height="50" style="display: block; box-sizing: border-box; height: 50px; width: 100px;"></canvas></div>
+        <div class="col-md-6"><canvas id="PerKdd" width="100" height="50" style="display: block; box-sizing: border-box; height: 50px; width: 100px;"></canvas></div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mx-auto"><canvas id="PerMi" width="100" height="50" style="display: block; box-sizing: border-box; height: 50px; width: 100px;"></canvas></div>
+      </div>
+    </div>
+
+    <!--End Porcentaje Lnetitud-->
 </div>
 <!--End Results>
 <!--Conclusions-->
 <div id="Conclusions" class="container">
     <h2 class="display-6 text-dark content-space-t-3">Conclusions</h2>
+    <p>With the results obtained is clear that the Raspberry behaviour is worse than the behaviour of the laptop, it takes significantly longer to finish executing than the other machine. However
+      it has been able to complete the task assigned even in the worst cases. So we have seen that the Raspberry is more powerful than it appeared at first glace, even it has been able to obtain its own dataset 
+      from the data of the sensors, an IoT device-like behaviour.</p>
+      <p>Thanks to the test carried out during this project we can conclude that the Raspberry can develop these kind of task without nothing to envy to the Laptop. We are talking about a device with a small size,
+         able to interact with its surrond and with lower power consumption, which can be easily implementend anywhere. Being a perfect candidate inwhich implement IoT and Machine Learning applications.</p>
 </div>
 <!--End Conclusions--> 
+<div class="content-space-t-3">
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+</div>
   </main>
   <!-- ========== END MAIN CONTENT ========== -->
 
   <!-- ========== FOOTER ========== -->
-  @@include("@@autopath/partials/footer/main.html")
+  <!--@@include("@@autopath/partials/footer/main.html")-->
   <!-- ========== END FOOTER ========== -->
 
   <!-- ========== SECONDARY CONTENTS ========== -->
   <!-- Go To -->
-  @@include("@@autopath/partials/layouts-components/go-to.html")
+  <!--@@include("@@autopath/partials/layouts-components/go-to.html")-->
   <!-- ========== END SECONDARY CONTENTS ========== -->
 
   <!-- JS Global Compulsory @@deleteLine:build -->
@@ -1101,7 +1134,207 @@ new Chart("LowOccupancy", {
         },
     });</script>
   <!--End High Mi-->
+
+  <!--Per Occupancy-->
+  <script>
+    var xValues = ["Idle","Low","Middle","High"];
+    
+    new Chart("PerOccupancy", {
+      type: "bar",
+      data: {
+        labels: xValues,
+        datasets: [{
+          label:"LR",
+          data: [87,90,89,74],
+          backgroundColor: "#36a2eb",
+          borderColor:  "#36a2eb",
+        },{
+          label:"SVM",
+          data: [76, 78,63,63],
+          backgroundColor: "#ffa500",
+          borderColor: "#ffa500",
+        },{
+          label:"GB",
+          data: [74, 71,63,40],
+          backgroundColor: "rgba(0,200,0,1)",
+          borderColor: "rgba(0,200,0,1)",
+        },{
+          label:"RF",
+          data: [70, 69,66,56],
+          backgroundColor: "rgba(222,23,56,1)",
+          borderColor: "rgba(222,23,56,1)",
+        }]
+      },
+      options: {
+        categoryPercentage: 0.5,
+        barPercentage: 1,
+        responsive: true,
+        interaction: {
+              intersect: false,
+        },
+        plugins: {
+          title: {
+            display: true,
+            text: 'Room Occupancy DataSet',
+            color: '#444',
+            font: {
+              size: 18
+            }
+          },
+          legend: {
+            display: false,
+            labels: {
+              position: 'top'
+            }
+          }, 
+        },
+        scales: {
+          y: {
+            suggestedMax: 100
+          },
+          x: {
+            title: {
+              display: true,
+            },
+          }
+        },
+        },
+    });</script>
+  <!--End Per Occupancy-->
   
+  <!--Per Kdd-->
+  <script>
+    var xValues = ["Idle","Low","Middle","High"];
+    
+    new Chart("PerKdd", {
+      type: "bar",
+      data: {
+        labels: xValues,
+        datasets: [{
+          label:"LR",
+          data: [85,80,70,56],
+          backgroundColor: "#36a2eb",
+          borderColor:  "#36a2eb",
+        },{
+          label:"SVM",
+          data: [78,68,36,34],
+          backgroundColor: "#ffa500",
+          borderColor: "#ffa500",
+        },{
+          label:"GB",
+          data: [79, 73,68,54],
+          backgroundColor: "rgba(0,200,0,1)",
+          borderColor: "rgba(0,200,0,1)",
+        },{
+          label:"RF",
+          data: [62, 60,56,63],
+          backgroundColor: "rgba(222,23,56,1)",
+          borderColor: "rgba(222,23,56,1)",
+        }]
+      },
+      options: {
+        categoryPercentage: 0.5,
+        barPercentage: 1,
+        responsive: true,
+        interaction: {
+              intersect: false,
+        },
+        plugins: {
+          title: {
+            display: true,
+            text: 'Kdd Cup 1999 DataSet',
+            color: '#444',
+            font: {
+              size: 18
+            }
+          },
+          legend: {
+            display: false,
+            labels: {
+              position: 'top'
+            }
+          }, 
+        },
+        scales: {
+          y: {
+            suggestedMax: 100
+          },
+          x: {
+            title: {
+              display: true,
+            },
+          }
+        },
+        },
+    });</script>
+    <!--End Per Kdd-->
+
+    <!--Per Mi-->
+    <script>
+      var xValues = ["Idle","Low","Middle","High"];
+      
+      new Chart("PerMi", {
+        type: "bar",
+        data: {
+          labels: xValues,
+          datasets: [{
+            label:"LR",
+            data: [81,88,84,81],
+            backgroundColor: "#36a2eb",
+            borderColor:  "#36a2eb",
+          },{
+            label:"SVM",
+            data: [84,83,73,73],
+            backgroundColor: "#ffa500",
+            borderColor: "#ffa500",
+          },{
+            label:"GB",
+            data: [79,76,75,63],
+            backgroundColor: "rgba(0,200,0,1)",
+            borderColor: "rgba(0,200,0,1)",
+          },{
+            label:"RF",
+            data: [69,65,67,64],
+            backgroundColor: "rgba(222,23,56,1)",
+            borderColor: "rgba(222,23,56,1)",
+          }]
+        },
+        options: {
+          categoryPercentage: 0.5,
+          barPercentage: 1,
+          responsive: true,
+          interaction: {
+                intersect: false,
+          },
+          plugins: {
+            title: {
+              display: true,
+              text: 'Mi DataSet',
+              color: '#444',
+              font: {
+                size: 18
+              }
+            },
+            legend: {
+              display: false,
+              labels: {
+                position: 'top'
+              }
+            }, 
+          },
+          scales: {
+            y: {
+              suggestedMax: 100
+            },
+            x: {
+              title: {
+                display: true,
+              },
+            }
+          },
+          },
+      });</script>
+    <!--End Per Mi-->
 
 
 </body></html>

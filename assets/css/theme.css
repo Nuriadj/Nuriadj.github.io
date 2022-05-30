@@ -6756,7 +6756,7 @@ fieldset:disabled .btn {
 .carousel-control-next {
   position: absolute;
   top: 0;
-  bottom: -20%;
+  bottom: -12%;
   z-index: 1;
   display: -ms-flexbox;
   display: flex;
@@ -25853,5 +25853,21 @@ a:hover .text-inherit {
 
 .pc {
   background-color: rgba(0,30,255,0.7);
+}
+
+.LR {
+  background-color: #36a2eb;
+}
+
+.SVM {
+  background-color: #ffa500;
+}
+
+.GB {
+  background-color: rgba(0,200,0,1);
+}
+
+.RF {
+  background-color: rgba(222,23,56,1);
 }
 
